@@ -8,7 +8,9 @@
 ### Proceso de modificación por Color Map:
 - El proceso se basa en dividir la imagen en sus canales RGB, para obtener valores individuales, y en base a esos valores, modificar los valores de pixeles de la manera deseada, en este caso se les aplica un 'Color Map', el cual modifica los pixeles en base a su valor numérico, utilizando escalas de colores predefinidas.
 
-```#include <iostream>
+```
+
+#include <iostream>
 #include <opencv2/opencv.hpp>
 #include <opencv2/core.hpp>
 #include <filesystem>
@@ -54,6 +56,7 @@
          cv::imshow("greenChannel", greenChannel);
          cv::imshow("redChannel", redChannel);
          cv::waitKey(0);
-     }```
+     }
+```
 ## Análisis de complejidad de tiempo
 - La complejidad de tiempo de este código es de O(W * H * C). Dado que originalmente las imágenes cargadas por `cv::imread` tienen una complejidad de O(W * H) W siendo el ancho (width) y H la altura (height) de la imagen cargada, al ser divididas por sus canales de colores RGB por `cv::split`, se convierte en O(W * H * C), 'C' siendo el numero de canales en los que se divide.
